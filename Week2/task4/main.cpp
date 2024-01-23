@@ -18,7 +18,8 @@ int main(int argc, char *argv[]) {
     QTextStream in(&inputFile);
     QString fileContent = in.readAll();
 
-    // Filter out characters except letters, numbers, commas, and hyphens
+    // Filter out characters except letters, numbers, commas, and hyphens, seems to sanitize the
+    //characters correctly
     QString filteredContent;
     for (const QChar &ch : fileContent) {
         // Check if the character is one of the allowed characters
@@ -26,7 +27,8 @@ int main(int argc, char *argv[]) {
             filteredContent.append(ch);
         }
     }
-    /* for (const QChar &ch : fileContent) {
+    /* This offered inadequate sanitization:
+     * for (const QChar &ch : fileContent) {
         if (ch.isLetterOrNumber() || ch == ',' || ch == '-') {
             filteredContent.append(ch);
         }

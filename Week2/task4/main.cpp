@@ -26,6 +26,11 @@ int main(int argc, char *argv[]) {
             filteredContent.append(ch);
         }
     }
+    /* for (const QChar &ch : fileContent) {
+        if (ch.isLetterOrNumber() || ch == ',' || ch == '-') {
+            filteredContent.append(ch);
+        }
+    }*/
 
     // Print the filtered content
     qDebug() << "Filtered Content:";

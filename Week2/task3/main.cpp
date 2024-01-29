@@ -2,6 +2,9 @@
 #include <QFile>
 #include <QCryptographicHash>
 #include <QRandomGenerator>
+/*QRandomGenerator::system() in Qt is designed to be cryptographically secure by using
+ * platform-specific APIs or libraries that provide robust algorithms and entropy sources
+ *  to ensure unpredictable and unbiased random number generation.*/
 
 void generateAndWriteRandomData(const QString &fileName, qint64 dataSize) {
     QFile file(fileName);
